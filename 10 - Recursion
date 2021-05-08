@@ -1,0 +1,8 @@
+Recursion
+
+This is a function that refers itself
+
+Stackoverflow - occurs when a function is repeatedly added to the call stack till it overflows
+ to prevent this, always have a base case and recursive case. Two return statements.
+
+Recursive algorithms have time complexity of O(2^n) thus really slows down with increasing number of input.

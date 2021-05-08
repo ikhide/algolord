@@ -1,0 +1,19 @@
+Hash tables is also called object(javascript) or dictonaries(python)
+ 
+
+Hash Function 
+Its a function that generates a value of fixed length
+for each input it gets 
+
+IDEMPOTENT  - a function that returns same output every time for same input.
+
+Hash function is used to create the address location of a value given the key as input.
+
+Maps
+e.g const a = new Map()
+
+You can use any data type (function, array) as a key unlike a hash table that only allows string as key
+
+Set
+const a = new Set()
+just like maps but you can only store keys.
