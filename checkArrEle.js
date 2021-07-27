@@ -2,7 +2,7 @@
 //Contains common items.
 
 const array1 = ["a", "b", "c", "d"];
-const array2 = ["x", "y", "z", "a"];
+const array2 = ["x", "y", "z", "a", "b"];
 
 //Solution 1
 function containsCommonItems(arr1, arr2) {
@@ -45,9 +45,9 @@ function containsCommonItems2(arr1, arr2) {
 
 //Solution 3
 function containsCommonItems3(arr1, arr2) {
-  return arr1.some((item) => arr2.includes(item));
+  return arr1.filter((item) => arr2.includes(item));
 }
 
-// console.log(containsCommonItems3(array1, array2));
+console.log(containsCommonItems3(array1, array2));
 // Most advanced solution
 // Using inbuilt javascript array methods
