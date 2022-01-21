@@ -1,21 +1,27 @@
 function sherlockAndAnagrams(s) {
   const substring = createSubstrings(s);
-  const newString = [...substring];
-  let count = 0;
+  const traverseString = [...substring];
+  const len = traverseString.length;
+  let count = {};
+  let remove = false;
 
-  while (newString.length > 0) {
-    let currentString = newString.shift();
-    let reverseString = currentString.split("").reverse().join("");
+  for (let i = 0; i < len; i++) {
+    let currentSubstring = substring[i];
+    count[currentSubstring] = count[currentSubstring] || 0;
+    let reversed = currentSubstring.split("").reverse().join("");
 
-    console.log("currentString", currentString);
-    if (newString.includes(reverseString)) {
-      //   newString.splice(newString.indexOf(reverseString), 1);
-      console.log(newString, "sub", substring);
-      count++;
-    }
+    console.log({ currentSubstring, reversed, traverseString });
+    traverseString.forEach((string) => {
+      if (string === reversed) {
+        count[currentSubstring]++;
+        remove = true;
+      }
+    });
+
+    if (remove) traverseString.shift();
+    remove = false;
   }
-
-  return count++;
+  return count;
 }
 
 function createSubstrings(str) {
@@ -25,18 +31,10 @@ function createSubstrings(str) {
 
   for (i = 0; i < str.length; i++) {
     for (j = i + 1; j < str.length + 1; j++) {
-      result.push(str.slice(i, j));
+      str.slice(i, j).length !== str.length && result.push(str.slice(i, j));
     }
   }
-  return result;
+  return result.sort();
 }
 
-console.log(sherlockAndAnagrams("kkkk"));
-
-// a,b,b,a,ab,bb,ba,abb,bba
-
-//[a,a],[b,b],[ab,ba][abb,bba]
-
-//kkkk
-//k,kk,,kkk
-//[k,k],[k,k],[k,k],[k,k],[k,k],[k,k],[kk,kk],[kk,kk],[k,kk],[kkk,kkk],[],[],[],[],[],[],[]
+console.log(sherlockAndAnagrams("ifailuhkqq"));
