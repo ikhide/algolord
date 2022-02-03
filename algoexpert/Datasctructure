@@ -1,0 +1,47 @@
+- A data structure is a way to organize and manage data
+- Time complexity is measure of how fast code runs
+- Space complexity is measure of how much memory an algorithm uses
+
+MEMORY
+
+- Optimizing memory usage is important for performance`
+
+STACKS AND QUEUES
+
+- Stacks are LIFO (Last In First Out) e.g, a stack of plates
+- Queues are FIFO (First In First Out) e.g, a line of people
+- Supports constant time insertion and deletion
+
+GRAPHS
+
+It is a collection of nodes that may or may not be connected to each other
+
+- Every node is a vertex
+- Every edge is a connection between two vertices
+- A graph is a collection of vertices and edges
+- An example is twitter friends. You may be able to follow someone and they may follow you back or not. Some people do not have any followers.
+- A cyclic graph is a graph that has three or more vertices connected that forms an infinite loop.
+- Acyclic graphs are graphs that do not have cycles.
+- Space complexity is O(V + E)
+- Time complexity is O(V + E)
+- You traverse a graph using DFS (Depth-First Search) or BFS (Breadth-First Search).
+
+TREES
+
+- A tree is a type of graph where every node is connected to all of its children, but not to any of its parents.
+- A binary tree is a tree where every node has at most two children.
+- There are also ternary and n-ary trees.
+- Binary search trees are a type of binary tree.(Each left sub tree is less than or equal to the parent node, each right subtree is greater than or equal to the parent node)
+- storing O(n)
+- Traversing in O(log(n))
+- A branch is any path that starts at the root and ends at a leaf.
+- PERFECT BINARY TREE: A binary tree where every node has tw child and every branch has same depth.
+- COMPLETE BINARY TREE: A binary tree where every node has two children but the leftest branch has the highest depth.
+- INCOMPLETE BINARY TREE: A binary tree where every node has two children but the leftest branch does not have the highest depth.
+- BALANCED BINARY TREE: A binary tree where the difference in the depth of the two subtrees of every node is at most one.
+- FULL BINARY TREE: A binary tree where every node has either two or no children.
+
+STRINGS
+
+- Inserting into a string is O(n)
+- adding two strings together is O(n+m)
