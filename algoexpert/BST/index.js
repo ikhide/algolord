@@ -62,6 +62,35 @@ class BST {
     return closest;
   }
 
+  remove(target) {
+    const removeNode = (node, target) => {
+      if (node === null) {
+        return null;
+        
+    }
+    
+
+    removeNode(this.root, target);
+    return this.root;
+  }
+
+  contains(target) {
+    let found = false;
+    const traverse = function (node) {
+      if (node.data === target) {
+        found = true;
+        return;
+      }
+      if (node.data < target && node.right !== null) {
+        return traverse(node.right);
+      } else if (node.data > target && node.left !== null) {
+        return traverse(node.left);
+      }
+    };
+    traverse(this.root);
+    return found;
+  }
+
   view() {
     return this.root;
   }
@@ -72,5 +101,8 @@ bst.add(10);
 bst.add(5);
 bst.add(3);
 bst.add(11);
-// console.log(bst.view());
-console.log(bst.findClosestValueInBst(null, 2));
+
+// console.log(bst.findClosestValueInBst(null, 2));
+// console.log(bst.findClosestValueInBst(11));
+console.log(bst.remove(3));
+console.log(bst.contains(11));
