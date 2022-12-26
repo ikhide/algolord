@@ -1,1 +1,0 @@
-SELECT m.GroupID,c.CompanyName,Count(*) as Count   FROM maintable_RRBVP m   INNER JOIN cb_vendorinformation c ON m.GroupID=c.GroupID   GROUP BY m.GroupID,c.CompanyName ORDER BY Count, m.GroupID asc;
