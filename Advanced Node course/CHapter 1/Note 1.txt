@@ -1,0 +1,22 @@
+* In node the V* enables JS to run outside the browser. It translates JS code into C++ code.
+* The lib uv is used to access the underlying OS.
+* Node js it self simply opens APIs and functions to access the V8 and libuv
+
+
+THREADS
+
+
+* A process is an instance of a running program.
+* A single program can have multiple threads
+* The OS scheduler is used to determine which thread runs
+* One CPU core runs one thread, however with multithreading functionality, each core can run more than one.
+
+
+EVENT LOOP
+
+* Each thread has one event loop.
+* any time the event loop runs, its called one click
+
+// borrowing freeze,
+// Visiting freeze
+//
