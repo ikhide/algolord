@@ -1,7 +1,0 @@
-Why LinkedList?
-- No re-indexing of elements when inserting or deleting
-
-- Linked list values are scattered in memory like hash tables 
-
-A POINTER
-    This is a reference to a point in memory
