@@ -1,13 +1,32 @@
-const list = [3, 4, 6, 2, 33, 1, 5, 5, 7, 7, 8, 9, 0, 10];
+const array = Array(10001)
+  .fill(0)
+  .map((_, index) => index);
+const list = [
+  ...array.reverse(),
+  3,
+  4,
+  6,
+  2,
+  33,
+  1,
+  5,
+  ...array,
+  5,
+  7,
+  7,
+  8,
+  9,
+  0,
+  10,
+];
 // Sorting algorithms implementations
 
 const test1 = (arr) => {
   const sorted = [];
 
-  while (list.length) {
+  while (arr.length) {
     const lowest = Math.min(...arr);
     const lowestPosition = arr.indexOf(lowest);
-
     sorted.push(lowest);
     arr.splice(lowestPosition, 1);
   }
@@ -29,20 +48,35 @@ function bubbleSort(arr) {
 
 function selectionSort(arr) {
   for (let i = 0; i < arr.length; i++) {
-    let temp = { value: arr[i], index: i };
+    let min = { value: arr[i], index: i };
 
     for (let j = i + 1; j < arr.length; j++) {
-      if (arr[j] < temp.value) {
-        temp = { value: arr[j], index: j };
+      if (arr[j] < min.value) {
+        min = { value: arr[j], index: j };
       }
     }
-    arr.splice(arr.indexOf(temp.index), 1, arr[i]);
-    arr[i] = temp.value;
+
+    arr[min.index] = arr[i];
+    arr[i] = min.value;
   }
   return arr;
 }
 
-console.log(selectionSort(list));
+let t4 = process.hrtime();
+console.log("test1 ", test1([...list]));
+let t5 = process.hrtime(t4);
+
+let t0 = process.hrtime();
+console.log("bubble ", bubbleSort([...list]));
+let t1 = process.hrtime(t0);
+
+let t2 = process.hrtime();
+console.log("selectionSort ", selectionSort([...list]));
+let t3 = process.hrtime(t2);
+
+console.log("bubble took " + t1[1] / 1000000 + "ms ");
+console.log("selectionSort took " + t3[1] / 1000000 + "ms ");
+console.log("test1 took " + t5[1] / 1000000 + "ms ");
 
 function insertionSort(arr) {}
 
