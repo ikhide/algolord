@@ -1,0 +1,23 @@
+{
+  "name": "art-tatum-visualization",
+  "version": "1.0.0",
+  "description": "A project to visualize the masterpieces and milestones of Art Tatum using D3.js.",
+  "main": "src/js/visualization.js",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'Build step not defined'",
+    "test": "echo 'No tests defined'"
+  },
+  "dependencies": {
+    "d3": "^7.0.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "art",
+    "visualization",
+    "d3",
+    "tatum"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}

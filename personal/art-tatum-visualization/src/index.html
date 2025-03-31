@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Tatum Visualization</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/visualization.js"></script>
+</head>
+
+<body>
+    <h1>Art Tatum Visualization</h1>
+
+    <div class="controls-container">
+        <div class="selection-panel">
+            <div class="select-container">
+                <label for="collection-select">Select Collection:</label>
+                <select id="collection-select">
+                    <option value="">-- Select Collection --</option>
+                    <option value="masterpieces">Masterpieces</option>
+                    <option value="milestones">Milestones</option>
+                </select>
+            </div>
+
+            <div id="volumes-container" class="volumes-container hidden">
+                <h3>Select Volumes:</h3>
+                <div id="volumes-checkboxes" class="checkbox-group"></div>
+            </div>
+        </div>
+
+        <div class="tracks-panel hidden" id="tracks-panel">
+            <h3>Tracks:</h3>
+            <div id="tracks-container" class="tracks-container"></div>
+        </div>
+
+        <div class="analyze-section">
+            <button id="analyze-btn" class="primary-btn">Analyze Collections</button>
+        </div>
+    </div>
+
+    <div id="analysis-view" class="analysis-view hidden">
+        <h2>Analysis of Art Tatum Collections</h2>
+        <div class="filter-options">
+            <label><input type="checkbox" id="show-all" checked> Show All</label>
+            <label><input type="checkbox" id="only-masterpieces"> Only Masterpieces</label>
+            <label><input type="checkbox" id="only-milestones"> Only Milestones</label>
+            <label><input type="checkbox" id="show-duplicates"> Show Duplicates</label>
+            <label><input type="checkbox" id="hide-duplicates"> Hide Duplicates</label>
+            <label><input type="checkbox" id="unique-tracks"> Unique Tracks</label>
+        </div>
+        <div class="table-container">
+            <table id="analysis-table">
+                <thead>
+                    <tr>
+                        <th>Volume</th>
+                        <th>Masterpieces</th>
+                        <th>Milestones</th>
+                    </tr>
+                </thead>
+                <tbody id="analysis-table-body">
+                    <!-- Table content will be generated dynamically -->
+                </tbody>
+            </table>
+        </div>
+
+
+
+        <div class="stats">
+            <div id="statsDisplay"></div>
+        </div>
+    </div>
+
+    <div id="visualization">
+        <svg width="1200" height="400"></svg>
+    </div>
+</body>
+
+</html>
