@@ -1,0 +1,39 @@
+function fibonacciRecursive(current = 1, prev = 0) {
+  if (current >= Math.pow(10, 1000)) return current;
+  const newCurrent = current + prev;
+  return fibonacciRecursive(newCurrent, current);
+}
+
+function fibonacciIterative(current = 1, prev = 0) {
+  while (current < Math.pow(10, 1000)) {
+    const newCurrent = current + prev;
+    prev = current;
+    current = newCurrent;
+  }
+  return current;
+}
+
+// Benchmark function
+function benchmark(fn, trials = 1000) {
+  const times = [];
+  for (let i = 0; i < trials; i++) {
+    const start = performance.now();
+    fn();
+    const end = performance.now();
+    times.push(end - start);
+  }
+
+  const avg = times.reduce((a, b) => a + b) / trials;
+  const min = Math.min(...times);
+  const max = Math.max(...times);
+
+  console.log(`Average time: ${avg.toFixed(4)}ms`);
+  console.log(`Min time: ${min.toFixed(4)}ms`);
+  console.log(`Max time: ${max.toFixed(4)}ms`);
+}
+
+console.log("Iterative:");
+benchmark(fibonacciIterative);
+
+console.log("\nRecursive:");
+benchmark(fibonacciRecursive);

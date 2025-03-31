@@ -66,12 +66,11 @@ class BST {
     const removeNode = (node, target) => {
       if (node === null) {
         return null;
-        
-    }
-    
+      }
 
-    removeNode(this.root, target);
-    return this.root;
+      removeNode(this.root, target);
+      return this.root;
+    };
   }
 
   contains(target) {
